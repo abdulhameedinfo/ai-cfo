@@ -66,12 +66,7 @@ npm run dev
 
 The AI CFO uses tool calling instead of embedding raw data in prompts. The model selects a tool, the server queries Supabase views, and only the minimal aggregate results are sent back to the model. This scales cleanly, keeps tokens low, and avoids exposing raw tables to the LLM.
 
-## Demo Checklist
-
-- Ask profitability question about Home Depot.
-- Ask travel cost trend + upcoming quarter run-rate.
-- Run expense audit for duplicate flights or large equipment purchases.
 
 ## Deployment
 
-Deploy with Vercel or Railway. Ensure env variables are set on the host.
+Deploy with Vercel or Railway. Ensure env variables SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GEMINI_API_KEY, GEMINI_MODEL are set on the host.
