@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
+import type { FunctionDeclaration } from "@google/generative-ai";
 import {
   auditExpensesLastYear,
   getOrgProfitMargin,
@@ -21,7 +22,7 @@ const systemPrompt = [
   "Keep answers concise and business-focused.",
 ].join(" ");
 
-const toolDeclarations = [
+const toolDeclarations: FunctionDeclaration[] = [
   {
     name: "get_org_profit_margin",
     description:
@@ -74,10 +75,6 @@ const toolDeclarations = [
     name: "audit_expenses_last_year",
     description:
       "Detect duplicate flights or unusually large equipment purchases in the last year.",
-    parameters: {
-      type: SchemaType.OBJECT,
-      properties: {},
-    },
   },
 ];
 
