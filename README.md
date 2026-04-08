@@ -65,3 +65,7 @@ npm run dev
 ## AI Orchestration (Short)
 
 The AI CFO uses tool calling instead of embedding raw data in prompts. The model selects a tool, the server queries Supabase views, and only the minimal aggregate results are sent back to the model. This scales cleanly, keeps tokens low, and avoids exposing raw tables to the LLM.
+
+## Deployment
+
+Deploy with Vercel or Railway. Ensure env variables SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, GEMINI_API_KEY, GEMINI_MODEL are set on the host.
